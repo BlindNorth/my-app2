@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MIDISounds from 'midi-sounds-react';
 
 class App extends Component {
+
+  playTestInstrument() {
+		this.midiSounds.playChordNow(3, [60], 2.5);
+  }
+  
+  playTestInstrument2() {
+		this.midiSounds.playChordNow(3, [60], 2.5);
+	}
+
   render() {
     return (
       <div className="App">
@@ -18,8 +28,11 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
+            <p><button onClick={this.playTestInstrument.bind(this)}>C</button></p>
+            <p><button onClick={this.playTestInstrument2.bind(this)}>C#</button></p>
           </a>
         </header>
+        <MIDISounds ref={(ref) => (this.midiSounds = ref)} appElementName="root" instruments={[3]} />	
       </div>
     );
   }
