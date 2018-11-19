@@ -38,6 +38,14 @@ class App extends Component {
           <p><button onClick={this.playTestInstrument2.bind(this)}>C#</button></p>
           
           <p><button onClick={this.playTestInstrument3.bind(this)}>D</button></p>
+
+          <p><button onClick={this.playTestInstrument3.bind(this)}>D</button></p>
+
+          <p><button onClick={this.playTestInstrument3.bind(this)}>D</button></p>
+
+          <p><button onClick={this.playTestInstrument3.bind(this)}>D</button></p>
+
+          <p><button onClick={this.playTestInstrument3.bind(this)}>D</button></p>
         </header>
         <MIDISounds ref={(ref) => (this.midiSounds = ref)} appElementName="root" instruments={[3]} />	
 		<hr/>
