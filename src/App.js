@@ -10,8 +10,12 @@ class App extends Component {
   }
   
   playTestInstrument2() {
-		this.midiSounds.playChordNow(3, [60], 2.5);
+		this.midiSounds.playChordNow(3, [61], 2.5);
+  }
+  playTestInstrument3() {
+		this.midiSounds.playChordNow(3, [62], 2.5);
 	}
+  
 
   render() {
     return (
@@ -28,11 +32,15 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
-            <p><button onClick={this.playTestInstrument.bind(this)}>C</button></p>
-            <p><button onClick={this.playTestInstrument2.bind(this)}>C#</button></p>
           </a>
+          <p><button onClick={this.playTestInstrument.bind(this)}>C</button></p>
+          
+          <p><button onClick={this.playTestInstrument2.bind(this)}>C#</button></p>
+          
+          <p><button onClick={this.playTestInstrument3.bind(this)}>D</button></p>
         </header>
         <MIDISounds ref={(ref) => (this.midiSounds = ref)} appElementName="root" instruments={[3]} />	
+		<hr/>
       </div>
     );
   }
