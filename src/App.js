@@ -16,7 +16,8 @@ class App extends Component {
   }
   playTestInstrument3() {
 		this.midiSounds.playChordNow(3, [62], 2.5);
-	}
+  }
+  
   constructor(props) {
     super(props)
     this.idleTimer = null
@@ -27,7 +28,8 @@ class App extends Component {
  
  
   _onAction(e) {
-    console.log('user did something', e)
+    console.log('user did something', e);
+    //this.playTestInstrument3();
   }
   
   _onActive(e) {
@@ -42,7 +44,19 @@ class App extends Component {
 
   render() {
     return (
+      
       <div className="App">
+      <div>
+        <IdleTimer
+          ref={ref => { this.idleTimer = ref }}
+          element={document}
+          onActive={this.onActive}
+          onIdle={this.onIdle}
+          onAction={this.onAction}
+          debounce={250}
+          timeout={1000 * 60 * 15} />
+        {/* your app here */}
+      </div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
